@@ -8,9 +8,13 @@ public class EmployeePayrollService {
     public static void main(String[] args) throws SQLException {
         EmployeePayrollService service = new EmployeePayrollService();
         service.retrieveData();
+        service.updateSalary();
     }
     private void retrieveData() throws SQLException {
         List<EmployeeInfo> employeeInfoList = employeeRepo.retrieveData();
         System.out.println(employeeInfoList);
     }
+   private void updateSalary(){
+        employeeRepo.updateSalary(12,30000000);
+   }
 }
