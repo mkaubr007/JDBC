@@ -66,4 +66,18 @@ public class EmployeeRepo {
             System.out.println(e);
         }
     }
+    public void updateSalaryUsingPreparedSt(int id, int salary) {
+        try (Connection connection = getConnection()) {
+
+            String query = "update employee_payroll set salary=? where id=?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, salary);
+            preparedStatement.setInt(2, id);
+
+            preparedStatement.executeUpdate();
+            System.out.println("salary updated by prepare statement ");
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
 }

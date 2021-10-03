@@ -9,6 +9,7 @@ public class EmployeePayrollService {
         EmployeePayrollService service = new EmployeePayrollService();
         service.retrieveData();
         service.updateSalary();
+        service.updateSalaryUsingPreparedSt();
     }
     private void retrieveData() throws SQLException {
         List<EmployeeInfo> employeeInfoList = employeeRepo.retrieveData();
@@ -17,4 +18,7 @@ public class EmployeePayrollService {
    private void updateSalary(){
         employeeRepo.updateSalary(12,30000000);
    }
+    private void updateSalaryUsingPreparedSt() {
+        employeeRepo.updateSalaryUsingPreparedSt(12,80000);
+    }
 }
