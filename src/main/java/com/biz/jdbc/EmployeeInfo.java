@@ -1,12 +1,12 @@
 package com.biz.jdbc;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class EmployeeInfo {
     private int id;
     private String name;
     private double salary;
-    private String start_date;
+    private Date start_date;
     private  String gender;
     private long employee_phone;
     private String address;
@@ -42,11 +42,11 @@ public class EmployeeInfo {
         this.salary = salary;
     }
 
-    public String getStart_date() {
+    public Date getStart_date() {
         return start_date;
     }
 
-    public void setStart_date(String start_date) {
+    public void setStart_date(Date start_date) {
         this.start_date = start_date;
     }
 
